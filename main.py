@@ -55,7 +55,7 @@ def objective(trial):
             f.write(data)
 
     subprocess.run(["make", "-j", f"{os.cpu_count() - 2}"], cwd=JULIA_PATH)
-    # TODO: Run benchmark.sh
+    subprocess.run(["benchmark.sh"])
     # TODO: Return the result of benchmark
     return 100
 
